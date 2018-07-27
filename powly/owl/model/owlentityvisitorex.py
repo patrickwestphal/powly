@@ -1,11 +1,11 @@
 from abc import abstractmethod, ABC
 
-from model.owlclassvisitorexbase import OWLClassVisitorExBase
-from model.owldataentityvisitorexbase import OWLDataEntityVisitorExBase
-from model.owlindividualentityvisitorexbase import \
+from powly.owl.model.owlclassvisitorexbase import OWLClassVisitorExBase
+from powly.owl.model.owldataentityvisitorexbase import OWLDataEntityVisitorExBase
+from powly.owl.model.owlindividualentityvisitorexbase import \
     OWLIndividualEntityVisitorExBase
-from model.owlpropertyentityvisitorexbase import OWLPropertyEntityVisitorExBase
-from model.owlvisitorexbase import OWLVisitorExBase
+from powly.owl.model.owlpropertyentityvisitorexbase import OWLPropertyEntityVisitorExBase
+from powly.owl.model.owlvisitorexbase import OWLVisitorExBase
 
 
 class OWLEntityVisitorEx(

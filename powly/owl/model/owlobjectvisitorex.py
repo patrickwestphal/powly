@@ -1,14 +1,14 @@
 from abc import abstractmethod, ABC
 
-from model.owlannotationobjectvisitorex import OWLAnnotationObjectVisitorEx
-from model.owlaxiomvisitorex import OWLAxiomVisitorEx
-from model.owlclassexpressionvisitorex import OWLClassExpressionVisitorEx
-from model.owldatavisitorex import OWLDataVisitorEx
-from model.owlindividualvisitorex import OWLIndividualVisitorEx
-from model.owllogicalaxiomvisitorex import OWLLogicalAxiomVisitorEx
-from model.owlnamedobjectvisitorex import OWLNamedObjectVisitorEx
-from model.owlpropertyexpressionvisitorex import OWLPropertyExpressionVisitorEx
-from model.swrlobjectvisitorex import SWRLObjectVisitorEx
+from powly.owl.model.owlannotationobjectvisitorex import OWLAnnotationObjectVisitorEx
+from powly.owl.model.owlaxiomvisitorex import OWLAxiomVisitorEx
+from powly.owl.model.owlclassexpressionvisitorex import OWLClassExpressionVisitorEx
+from powly.owl.model.owldatavisitorex import OWLDataVisitorEx
+from powly.owl.model.owlindividualvisitorex import OWLIndividualVisitorEx
+from powly.owl.model.owllogicalaxiomvisitorex import OWLLogicalAxiomVisitorEx
+from powly.owl.model.owlnamedobjectvisitorex import OWLNamedObjectVisitorEx
+from powly.owl.model.owlpropertyexpressionvisitorex import OWLPropertyExpressionVisitorEx
+from powly.owl.model.swrlobjectvisitorex import SWRLObjectVisitorEx
 
 
 class OWLObjectVisitorEx(

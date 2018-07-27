@@ -1,6 +1,6 @@
 from abc import abstractmethod, ABC
 
-from model.owlvisitorexbase import OWLVisitorExBase
+from powly.owl.model.owlvisitorexbase import OWLVisitorExBase
 
 
 class OWLAnonymousIndividualVisitorExBase(OWLVisitorExBase, ABC):

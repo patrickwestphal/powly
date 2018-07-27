@@ -1,6 +1,6 @@
 from abc import abstractmethod, ABC
 
-from model.swrlrulevisitorbase import SWRLRuleVisitorBase
+from powly.owl.model.swrlrulevisitorbase import SWRLRuleVisitorBase
 
 
 class OWLLogicalAxiomVisitor(SWRLRuleVisitorBase, ABC):

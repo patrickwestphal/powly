@@ -1,7 +1,7 @@
 from abc import abstractmethod, ABC
 
-from model.owlclassvisitorexbase import OWLClassVisitorExBase
-from model.owlvisitorexbase import OWLVisitorExBase
+from powly.owl.model.owlclassvisitorexbase import OWLClassVisitorExBase
+from powly.owl.model.owlvisitorexbase import OWLVisitorExBase
 
 
 class OWLClassExpressionVisitorEx(

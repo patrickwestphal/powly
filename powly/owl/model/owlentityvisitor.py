@@ -1,10 +1,10 @@
 from abc import abstractmethod, ABC
 
-from model.owlclassvisitorbase import OWLClassVisitorBase
-from model.owldataentityvisitorbase import OWLDataEntityVisitorBase
-from model.owlindividualentityvisitorbase import OWLIndividualEntityVisitorBase
-from model.owlpropertyentityvisitorbase import OWLPropertyEntityVisitorBase
-from model.owlvisitorbase import OWLVisitorBase
+from powly.owl.model.owlclassvisitorbase import OWLClassVisitorBase
+from powly.owl.model.owldataentityvisitorbase import OWLDataEntityVisitorBase
+from powly.owl.model.owlindividualentityvisitorbase import OWLIndividualEntityVisitorBase
+from powly.owl.model.owlpropertyentityvisitorbase import OWLPropertyEntityVisitorBase
+from powly.owl.model.owlvisitorbase import OWLVisitorBase
 
 
 class OWLEntityVisitor(

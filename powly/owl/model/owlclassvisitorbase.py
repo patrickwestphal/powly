@@ -1,6 +1,6 @@
 from abc import ABC, abstractmethod
 
-from model.owlvisitorbase import OWLVisitorBase
+from powly.owl.model.owlvisitorbase import OWLVisitorBase
 
 
 class OWLClassVisitorBase(OWLVisitorBase, ABC):

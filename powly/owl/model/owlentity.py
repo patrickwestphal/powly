@@ -1,14 +1,14 @@
 from abc import abstractmethod, ABC
 
-from model.asowlannotationproperty import AsOWLAnnotationProperty
-from model.asowlclass import AsOWLClass
-from model.asowldataproperty import AsOWLDataProperty
-from model.asowldatatype import AsOWLDatatype
-from model.asowlnamedindividual import AsOWLNamedIndividual
-from model.asowlobjectproperty import AsOWLObjectProperty
-from model.owlnamedobject import OWLNamedObject
-from model.owlprimitive import OWLPrimitive
-from vocab.owlrdfvocabulary import OWLRDFVocabulary
+from powly.owl.model.asowlannotationproperty import AsOWLAnnotationProperty
+from powly.owl.model.asowlclass import AsOWLClass
+from powly.owl.model.asowldataproperty import AsOWLDataProperty
+from powly.owl.model.asowldatatype import AsOWLDatatype
+from powly.owl.model.asowlnamedindividual import AsOWLNamedIndividual
+from powly.owl.model.asowlobjectproperty import AsOWLObjectProperty
+from powly.owl.model.owlnamedobject import OWLNamedObject
+from powly.owl.model.owlprimitive import OWLPrimitive
+from powly.owl.vocab.owlrdfvocabulary import OWLRDFVocabulary
 
 
 class OWLEntity(

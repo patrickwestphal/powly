@@ -1,8 +1,8 @@
 from abc import abstractmethod, ABC
 
-from model.owlnamedobjectvisitor import OWLNamedObjectVisitor
-from model.owlnamedobjectvisitorex import OWLNamedObjectVisitorEx
-from model.owlobject import OWLObject
+from powly.owl.model.owlnamedobjectvisitor import OWLNamedObjectVisitor
+from powly.owl.model.owlnamedobjectvisitorex import OWLNamedObjectVisitorEx
+from powly.owl.model.owlobject import OWLObject
 
 
 class OWLNamedObject(OWLObject, ABC):

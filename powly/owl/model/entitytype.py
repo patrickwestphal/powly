@@ -1,7 +1,7 @@
 from abc import ABC, abstractmethod
 from enum import Enum
 
-from vocab.owlrdfvocabulary import OWLRDFVocabulary
+from powly.owl.vocab.owlrdfvocabulary import OWLRDFVocabulary
 
 
 class Builder(ABC):

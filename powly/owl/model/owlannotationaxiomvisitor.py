@@ -1,6 +1,6 @@
 from abc import abstractmethod, ABC
 
-from model.owlvisitorbase import OWLVisitorBase
+from powly.owl.model.owlvisitorbase import OWLVisitorBase
 
 
 class OWLAnnotationAxiomVisitor(OWLVisitorBase, ABC):

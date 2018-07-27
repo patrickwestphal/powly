@@ -1,8 +1,8 @@
 from abc import abstractmethod, ABC
 
-from model.asowlclass import AsOWLClass
-from model.owlpropertyrange import OWLPropertyRange
-from model.swrlpredicate import SWRLPredicate
+from powly.owl.model.asowlclass import AsOWLClass
+from powly.owl.model.owlpropertyrange import OWLPropertyRange
+from powly.owl.model.swrlpredicate import SWRLPredicate
 
 
 class OWLClassExpression(OWLPropertyRange, SWRLPredicate, AsOWLClass, ABC):

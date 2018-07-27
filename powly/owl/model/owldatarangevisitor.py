@@ -1,7 +1,7 @@
 from abc import ABC, abstractmethod
 
-from model.owldataentityvisitorbase import OWLDataEntityVisitorBase
-from model.owlvisitorbase import OWLVisitorBase
+from powly.owl.model.owldataentityvisitorbase import OWLDataEntityVisitorBase
+from powly.owl.model.owlvisitorbase import OWLVisitorBase
 
 
 class OWLDataRangeVisitor(OWLDataEntityVisitorBase, OWLVisitorBase, ABC):

@@ -1,6 +1,6 @@
 from abc import abstractmethod, ABC
 
-from exceptions import ClassCastException
+from powly.owl.exceptions import ClassCastException
 
 
 class AsOWLClass(ABC):

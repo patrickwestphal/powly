@@ -1,7 +1,7 @@
 from abc import abstractmethod, ABC
 
-from model.owlclassvisitorbase import OWLClassVisitorBase
-from model.owlvisitorbase import OWLVisitorBase
+from powly.owl.model.owlclassvisitorbase import OWLClassVisitorBase
+from powly.owl.model.owlvisitorbase import OWLVisitorBase
 
 
 class OWLClassExpressionVisitor(OWLClassVisitorBase, OWLVisitorBase, ABC):

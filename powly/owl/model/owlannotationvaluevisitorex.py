@@ -1,9 +1,9 @@
 from abc import abstractmethod, ABC
 
-from model.owlanonymousindividualvisitorexbase import \
+from powly.owl.model.owlanonymousindividualvisitorexbase import \
     OWLAnonymousIndividualVisitorExBase
-from model.owlliteralvisitorexbase import OWLLiteralVisitorExBase
-from model.owlvisitorexbase import OWLVisitorExBase
+from powly.owl.model.owlliteralvisitorexbase import OWLLiteralVisitorExBase
+from powly.owl.model.owlvisitorexbase import OWLVisitorExBase
 
 
 class OWLAnnotationValueVisitorEx(

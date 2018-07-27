@@ -1,8 +1,8 @@
 from abc import abstractmethod, ABC
 
-from model.owlannotationaxiomvisitorex import OWLAnnotationAxiomVisitorEx
-from model.owllogicalaxiomvisitorex import OWLLogicalAxiomVisitorEx
-from model.swrlrulevisitorexbase import SWRLRuleVisitorExBase
+from powly.owl.model.owlannotationaxiomvisitorex import OWLAnnotationAxiomVisitorEx
+from powly.owl.model.owllogicalaxiomvisitorex import OWLLogicalAxiomVisitorEx
+from powly.owl.model.swrlrulevisitorexbase import SWRLRuleVisitorExBase
 
 
 class OWLAxiomVisitorEx(

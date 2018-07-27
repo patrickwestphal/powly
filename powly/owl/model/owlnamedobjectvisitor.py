@@ -1,6 +1,6 @@
 from abc import abstractmethod, ABC
 
-from model.owlentityvisitor import OWLEntityVisitor
+from powly.owl.model.owlentityvisitor import OWLEntityVisitor
 
 
 class OWLNamedObjectVisitor(OWLEntityVisitor, ABC):

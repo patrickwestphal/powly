@@ -1,6 +1,6 @@
 from abc import abstractmethod, ABC
 
-from model.owlobject import OWLObject
+from powly.owl.model.owlobject import OWLObject
 
 
 class OWLPropertyRange(OWLObject, ABC):

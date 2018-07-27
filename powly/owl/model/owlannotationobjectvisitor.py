@@ -1,11 +1,11 @@
 from abc import ABC, abstractmethod
 
-from model.owlannotationaxiomvisitor import OWLAnnotationAxiomVisitor
-from model.owlannotationvaluevisitor import OWLAnnotationValueVisitor
-from model.owlanonymousindividualvisitorbase import \
+from powly.owl.model.owlannotationaxiomvisitor import OWLAnnotationAxiomVisitor
+from powly.owl.model.owlannotationvaluevisitor import OWLAnnotationValueVisitor
+from powly.owl.model.owlanonymousindividualvisitorbase import \
     OWLAnonymousIndividualVisitorBase
-from model.owlliteralvisitorbase import OWLLiteralVisitorBase
-from model.owlvisitorbase import OWLVisitorBase
+from powly.owl.model.owlliteralvisitorbase import OWLLiteralVisitorBase
+from powly.owl.model.owlvisitorbase import OWLVisitorBase
 
 
 class OWLAnnotationObjectVisitor(

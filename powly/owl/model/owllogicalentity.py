@@ -1,6 +1,6 @@
 from abc import abstractmethod, ABC
 
-from model.owlentity import OWLEntity
+from powly.owl.model.owlentity import OWLEntity
 
 
 class OWLLogicalEntity(OWLEntity, ABC):

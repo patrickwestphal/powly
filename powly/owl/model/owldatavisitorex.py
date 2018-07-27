@@ -1,8 +1,8 @@
 from abc import abstractmethod, ABC
 
-from model.owldataentityvisitorexbase import OWLDataEntityVisitorExBase
-from model.owlliteralvisitorexbase import OWLLiteralVisitorExBase
-from model.owlvisitorexbase import OWLVisitorExBase
+from powly.owl.model.owldataentityvisitorexbase import OWLDataEntityVisitorExBase
+from powly.owl.model.owlliteralvisitorexbase import OWLLiteralVisitorExBase
+from powly.owl.model.owlvisitorexbase import OWLVisitorExBase
 
 
 class OWLDataVisitorEx(
