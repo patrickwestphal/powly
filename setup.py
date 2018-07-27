@@ -9,5 +9,7 @@ setup(
     author='Patrick Westphal',
     author_email='powly-dev@teebeutelstoerche.de',
     description='',
-    install_requires=[]
+    install_requires=[
+        'rdflib==4.2.2'
+    ]
 )
