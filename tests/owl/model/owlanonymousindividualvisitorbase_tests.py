@@ -1,5 +1,5 @@
 from unittest.case import TestCase
 
 
-class OWLAnonymousIndividualVisitorBase(TestCase):
+class TestOWLAnonymousIndividualVisitorBase(TestCase):
     """OWLAnonymousIndividualVisitorBase test cases"""
