@@ -1,4 +1,4 @@
-from owl.model.owlaxiom import OWLAxiom
+from powly.owl.model.owlaxiom import OWLAxiom
 
 
 class OWLLogicalAxiom(OWLAxiom):

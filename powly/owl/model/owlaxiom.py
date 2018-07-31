@@ -1,5 +1,5 @@
-from owl.model.hasannotations import HasAnnotations
-from owl.model.owlobject import OWLObject
+from powly.owl.model.hasannotations import HasAnnotations
+from powly.owl.model.owlobject import OWLObject
 
 
 class OWLAxiom(OWLObject, HasAnnotations):

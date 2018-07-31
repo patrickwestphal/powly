@@ -1,6 +1,6 @@
 import itertools
 
-from owl.model.owlnaryclassaxiom import OWLNaryClassAxiom
+from powly.owl.model.owlnaryclassaxiom import OWLNaryClassAxiom
 
 
 class OWLDisjointClassesAxiom(OWLNaryClassAxiom):

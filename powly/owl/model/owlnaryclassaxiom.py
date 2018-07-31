@@ -1,7 +1,7 @@
-from owl.model.hasoperands import HasOperands
-from owl.model.owlclassaxiom import OWLClassAxiom
-from owl.model.owlnaryaxiom import OWLNaryAxiom
-from owl.model.owlsubclassofaxiomsetshortcut import \
+from powly.owl.model.hasoperands import HasOperands
+from powly.owl.model.owlclassaxiom import OWLClassAxiom
+from powly.owl.model.owlnaryaxiom import OWLNaryAxiom
+from powly.owl.model.owlsubclassofaxiomsetshortcut import \
     OWLSubClassOfAxiomSetShortCut
 
 

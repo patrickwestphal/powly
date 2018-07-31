@@ -1,7 +1,7 @@
 from abc import abstractmethod
 
-from owl.model.hasoperands import HasOperands
-from owl.model.owlaxiom import OWLAxiom
+from powly.owl.model.hasoperands import HasOperands
+from powly.owl.model.owlaxiom import OWLAxiom
 
 
 class OWLNaryAxiom(OWLAxiom, HasOperands):
