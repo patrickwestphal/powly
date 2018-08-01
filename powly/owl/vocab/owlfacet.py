@@ -1,7 +1,7 @@
 from enum import Enum
 from rdflib.term import URIRef
 
-from owl.vocab.namespaces import Namespaces
+from powly.owl.vocab.namespaces import Namespaces
 
 
 class OWLFacet(Enum):
