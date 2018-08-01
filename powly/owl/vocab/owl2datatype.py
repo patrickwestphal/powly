@@ -2,8 +2,8 @@ import re
 from enum import Enum
 from rdflib.term import URIRef
 
-from owl.vocab.owlfacet import OWLFacet
-from owl.vocab.xsdvocabulary import XSDVocabulary
+from powly.owl.vocab.owlfacet import OWLFacet
+from powly.owl.vocab.xsdvocabulary import XSDVocabulary
 from powly.owl.vocab.namespaces import Namespaces
 
 
@@ -221,5 +221,8 @@ class OWL2Datatype(Enum):
     @classmethod
     def is_built_in(cls, datatype_iri):
         return datatype_iri in cls.ALL_IRIS
+
+    def get_datatype(self):
+        raise NotImplementedError()
 
     # TODO: Finish!
