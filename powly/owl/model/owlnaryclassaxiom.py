@@ -1,3 +1,5 @@
+from itertools import chain
+
 from powly.owl.model.hasoperands import HasOperands
 from powly.owl.model.owlclassaxiom import OWLClassAxiom
 from powly.owl.model.owlnaryaxiom import OWLNaryAxiom
@@ -21,8 +23,9 @@ class OWLNaryClassAxiom(
         self.class_expressions.sort()
 
     def components(self):
-        """TODO: Implement"""
-        raise NotImplementedError()
+        return chain(
+            (ce for ce in self.class_expressions),
+            (ann for ann in self.annotations))
 
     def components_without_annotations(self):
         """TODO: Implement"""
