@@ -1,9 +1,8 @@
-from abc import abstractmethod
-
 from powly.owl.model.classexpressiontype import ClassExpressionType
-from powly.owl.model.owlobjectunionof import OWLObjectUnionOf
 from powly.owl.model.hasoperands import HasOperands
-from powly.owl.model.owlanonymousclassexpression import OWLAnonymousClassExpression
+from powly.owl.model.owlanonymousclassexpression import \
+    OWLAnonymousClassExpression
+from powly.owl.model.owlobjectunionof import OWLObjectUnionOf
 
 
 class OWLObjectOneOf(OWLAnonymousClassExpression, HasOperands):
@@ -41,7 +40,6 @@ class OWLObjectOneOf(OWLAnonymousClassExpression, HasOperands):
     def operands(self):
         return self.individuals()
 
-    @abstractmethod
     def as_object_union_of(self):
         """
         Simplifies this enumeration to a union of singleton nominals.
