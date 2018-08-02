@@ -17,6 +17,7 @@ class OWLObjectOneOf(OWLAnonymousClassExpression, HasOperands):
         """
         :param values: A collection/generator of OWLIndividual objects
         """
+        super().__init__()
         assert values is not None
         self.values = values
         self.values.sort()
