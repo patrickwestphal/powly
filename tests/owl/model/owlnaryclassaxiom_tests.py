@@ -15,4 +15,4 @@ class TestOWLNaryClassAxiom(TestCase):
         cls1 = OWLClass(prefix + 'Cls1')
         ce2 = OWLObjectSomeValuesFrom(prop1, cls1)
         # ann1 = OWLAnnotation
-        ceAx = OWLNaryClassAxiom()
+        # ceAx = OWLNaryClassAxiom()

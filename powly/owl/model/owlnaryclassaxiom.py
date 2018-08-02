@@ -1,3 +1,4 @@
+from abc import ABC, abstractmethod
 from itertools import chain
 
 from powly.owl.model.hasoperands import HasOperands
@@ -9,8 +10,9 @@ from powly.owl.model.owlsubclassofaxiomsetshortcut import \
 
 class OWLNaryClassAxiom(
         OWLClassAxiom, OWLNaryAxiom, OWLSubClassOfAxiomSetShortCut,
-        HasOperands):
+        HasOperands, ABC):
 
+    @abstractmethod
     def __init__(self, class_expressions, annotations):
         """
         :param class_expressions: A collection of OWLClassExpression objects
@@ -37,12 +39,11 @@ class OWLNaryClassAxiom(
 
     def class_expressions(self):
         """
-        TODO: Implement
         Gets all of the top level class expressions that appear in this axiom.
 
         :return: Sorted stream of class expressions that appear in the axiom.
         """
-        raise NotImplementedError()
+        return (ce for ce in self.class_expressions)
 
     def operands(self):
         return self.class_expressions()
