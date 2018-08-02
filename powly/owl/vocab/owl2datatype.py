@@ -65,8 +65,8 @@ class Category(Enum):
     CAT_BOOLEAN = ('Boolean value')
     CAT_UNIVERSAL = ('Universal literal')
 
-    def __init__(self, name, *facets):
-        self.name = name
+    def __init__(self, category_name, *facets):
+        self.category_name = category_name
         self.facets = facets
 
 
@@ -81,10 +81,10 @@ class OWL2Datatype(Enum):
         False, ANY)
     RDF_LANG_STRING = (
         Namespaces.RDF, 'langString', Category.CAT_STRING_WITHOUT_LANGUAGE_TAG,
-        False, ANY),
-    OWL_REAL = (Namespaces.OWL, 'real', Category.CAT_NUMBER, False, ANY),
+        False, ANY)
+    OWL_REAL = (Namespaces.OWL, 'real', Category.CAT_NUMBER, False, ANY)
     OWL_RATIONAL = (
-        Namespaces.OWL, 'rational', Category.CAT_NUMBER, False, NUMBER),
+        Namespaces.OWL, 'rational', Category.CAT_NUMBER, False, NUMBER)
     XSD_STRING = (
         Namespaces.XSD, XSDVocabulary.STRING.short_name,
         Category.CAT_STRING_WITHOUT_LANGUAGE_TAG, False, ANY)
@@ -120,8 +120,8 @@ class OWL2Datatype(Enum):
         Namespaces.XSD, XSDVocabulary.NON_POSITIVE_INTEGER.short_name,
         Category.CAT_NUMBER, False, NONPOS)
     XSD_POSITIVE_INTEGER = (
-        Namespaces.XSD, XSDVocabulary.POSITIVE_INTEGER, Category.CAT_NUMBER,
-        False, INTNOSIGN)
+        Namespaces.XSD, XSDVocabulary.POSITIVE_INTEGER.short_name,
+        Category.CAT_NUMBER, False, INTNOSIGN)
     XSD_NEGATIVE_INTEGER = (
         Namespaces.XSD, XSDVocabulary.NEGATIVE_INTEGER.short_name,
         Category.CAT_NUMBER, False, NEGINT)
@@ -159,8 +159,8 @@ class OWL2Datatype(Enum):
         Namespaces.XSD, XSDVocabulary.BOOLEAN.short_name, Category.CAT_BOOLEAN,
         True, BOOL)
     XSD_HEX_BINARY = (
-        Namespaces.XSD, XSDVocabulary.HEX_BINARY, Category.CAT_BINARY, False,
-        HEX)
+        Namespaces.XSD, XSDVocabulary.HEX_BINARY.short_name,
+        Category.CAT_BINARY, False, HEX)
     XSD_BASE_64_BINARY = (
         Namespaces.XSD, XSDVocabulary.BASE_64_BINARY.short_name,
         Category.CAT_BINARY, False, B64)
@@ -174,8 +174,9 @@ class OWL2Datatype(Enum):
         Namespaces.XSD, XSDVocabulary.DATE_TIME_STAMP.short_name,
         Category.CAT_TIME, False, TSTAMP)
 
-    def __new__(cls, *args, **kwargs):
-        cls.EL_DATATYPES = [
+    @classmethod
+    def EL_DATATYPES(cls):
+        return [
             cls.RDF_PLAIN_LITERAL, cls.RDF_XML_LITERAL, cls.RDFS_LITERAL,
             cls.OWL_RATIONAL, cls.OWL_REAL, cls.XSD_DECIMAL, cls.XSD_INTEGER,
             cls.XSD_NON_NEGATIVE_INTEGER, cls.XSD_STRING,
@@ -184,7 +185,9 @@ class OWL2Datatype(Enum):
             cls.XSD_BASE_64_BINARY, cls.XSD_ANY_URI, cls.XSD_DATE_TIME,
             cls.XSD_DATE_TIME_STAMP]
 
-        cls.RL_DATATYPES = [
+    @classmethod
+    def RL_DATATYPES(cls):
+        return [
             cls.RDF_PLAIN_LITERAL, cls.RDF_XML_LITERAL, cls.RDFS_LITERAL,
             cls.XSD_DECIMAL, cls.XSD_INTEGER, cls.XSD_NON_NEGATIVE_INTEGER,
             cls.XSD_NON_POSITIVE_INTEGER, cls.XSD_POSITIVE_INTEGER,
@@ -195,7 +198,10 @@ class OWL2Datatype(Enum):
             cls.XSD_NAME, cls.XSD_NCNAME, cls.XSD_NMTOKEN, cls.XSD_BOOLEAN,
             cls.XSD_HEX_BINARY, cls.XSD_BASE_64_BINARY, cls.XSD_ANY_URI,
             cls.XSD_DATE_TIME, cls.XSD_DATE_TIME_STAMP]
-        cls.ALL_IRIS = [
+
+    @classmethod
+    def ALL_IRIS(cls):
+        return [
             cls.RDF_XML_LITERAL, cls.RDFS_LITERAL, cls.RDF_PLAIN_LITERAL,
             cls.RDF_LANG_STRING, cls.OWL_REAL, cls.OWL_RATIONAL,
             cls.XSD_STRING, cls.XSD_NORMALIZED_STRING, cls.XSD_TOKEN,
@@ -212,7 +218,7 @@ class OWL2Datatype(Enum):
     def __init__(self, namespace, short_form, category, finite, reg_ex):
         self.iri = URIRef(str(namespace) + short_form)
         self.short_form = short_form
-        self.prefixed_name = namespace.prefixed_name + ':' + short_form
+        self.prefixed_name = namespace.get_prefix_name() + ':' + short_form
         self.category = category
         self.finite = finite
         self.reg_expression = reg_ex
