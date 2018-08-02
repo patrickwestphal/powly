@@ -1,7 +1,6 @@
 from unittest.case import TestCase
 
 from powly.owl.model.owlclass import OWLClass
-from powly.owl.model.owlnaryclassaxiom import OWLNaryClassAxiom
 from powly.owl.model.owlobjectproperty import OWLObjectProperty
 from powly.owl.model.owlobjectsomevaluesfrom import OWLObjectSomeValuesFrom
 
