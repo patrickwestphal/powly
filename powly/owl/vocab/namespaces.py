@@ -84,5 +84,8 @@ class Namespaces(Enum):
         else:
             self.hashless = ns
 
+    def get_prefix_name(self):
+        return self.prefix
+
     def __str__(self):
         return self.ns
