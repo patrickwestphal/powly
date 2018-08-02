@@ -102,3 +102,6 @@ class OWLDatatype(OWLDataRange, OWLObject, OWLLogicalEntity, OWLNamedObject):
     @staticmethod
     def is_owl_datatype():
         return True
+
+    def get_iri(self):
+        return self.iri

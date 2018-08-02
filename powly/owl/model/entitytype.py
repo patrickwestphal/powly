@@ -1,6 +1,7 @@
 from abc import ABC, abstractmethod
 from enum import Enum
 
+from powly.owl.model.hasiri import HasIRI
 from powly.owl.vocab.owlrdfvocabulary import OWLRDFVocabulary
 
 
@@ -14,7 +15,7 @@ class Builder(ABC):
         pass
 
 
-class EntityType(Enum):
+class EntityType(Enum, HasIRI):
     CLASS = (
         'Class', 'Class', 'Classes', OWLRDFVocabulary.OWL_CLASS,
         lambda i, p: p.getOWLClass(i))
@@ -58,3 +59,6 @@ class EntityType(Enum):
 
     def __repr__(self):
         return str(self)
+
+    def get_iri(self):
+        return self.vocabulary.get_iri()

@@ -99,3 +99,6 @@ class OWLObjectProperty(OWLObjectPropertyExpression, OWLProperty):
 
     def components(self):
         return (c for c in [self.iri])
+
+    def get_iri(self):
+        return self.iri

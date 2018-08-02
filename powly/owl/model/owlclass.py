@@ -202,3 +202,6 @@ class OWLClass(OWLClassExpression, OWLLogicalEntity, OWLNamedObject):
 
     def to_string_id(self):
         return str(self.iri)
+
+    def get_iri(self):
+        return self.iri

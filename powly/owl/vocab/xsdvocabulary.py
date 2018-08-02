@@ -1,10 +1,11 @@
 from enum import Enum
 from rdflib.term import URIRef
 
+from powly.owl.model.hasiri import HasIRI
 from powly.owl.vocab.namespaces import Namespaces
 
 
-class XSDVocabulary(Enum):
+class XSDVocabulary(Enum, HasIRI):
     ANY_TYPE = "anyType"
     ANY_SIMPLE_TYPE = "anySimpleType"
     STRING = "string"
@@ -69,3 +70,6 @@ class XSDVocabulary(Enum):
         "xsd:string"
         """
         raise NotImplementedError()
+
+    def get_iri(self):
+        return self.iri

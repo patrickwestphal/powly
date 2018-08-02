@@ -46,3 +46,6 @@ class OWLNamedIndividual(OWLIndividual, OWLLogicalEntity):
 
     def accept(self):
         raise NotImplementedError()
+
+    def get_iri(self):
+        return self.iri

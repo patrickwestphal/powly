@@ -1,11 +1,11 @@
 from enum import Enum
-
 from rdflib.term import URIRef
 
+from powly.owl.model.hasiri import HasIRI
 from powly.owl.vocab.namespaces import Namespaces
 
 
-class OWLRDFVocabulary(Enum):
+class OWLRDFVocabulary(Enum, HasIRI):
     OWL_THING = (Namespaces.OWL, 'Thing')
     OWL_NOTHING = (Namespaces.OWL, 'Nothing')
     OWL_CLASS = (Namespaces.OWL, 'Class')
@@ -165,3 +165,6 @@ class OWLRDFVocabulary(Enum):
             cls.OWL_BACKWARD_COMPATIBLE_WITH, cls.OWL_PRIOR_VERSION,
             cls.RDFS_SEE_ALSO, cls.RDFS_IS_DEFINED_BY,
             cls.OWL_INCOMPATIBLE_WITH, cls.OWL_DEPRECATED})
+
+    def get_iri(self):
+        return self.iri

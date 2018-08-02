@@ -2,10 +2,10 @@ import re
 from enum import Enum
 from rdflib.term import URIRef
 
+from powly.owl.model.hasiri import HasIRI
+from powly.owl.vocab.namespaces import Namespaces
 from powly.owl.vocab.owlfacet import OWLFacet
 from powly.owl.vocab.xsdvocabulary import XSDVocabulary
-from powly.owl.vocab.namespaces import Namespaces
-
 
 ANY = r'.*'
 NUMBER = r'(\\+|-)?([0-9]+)(\\s)*(/)(\\s)*([0-9]+)'
@@ -70,7 +70,7 @@ class Category(Enum):
         self.facets = facets
 
 
-class OWL2Datatype(Enum):
+class OWL2Datatype(Enum, HasIRI):
     RDF_XML_LITERAL = (
         Namespaces.RDF, 'XMLLiteral', Category.CAT_STRING_WITHOUT_LANGUAGE_TAG,
         False, ANY)
@@ -230,5 +230,8 @@ class OWL2Datatype(Enum):
 
     def get_datatype(self):
         raise NotImplementedError()
+
+    def get_iri(self):
+        return self.iri
 
     # TODO: Finish!

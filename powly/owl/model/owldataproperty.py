@@ -50,3 +50,6 @@ class OWLDataProperty(OWLDataPropertyExpression, OWLProperty, OWLObject):
     def accept(self, visitor):
         raise NotImplementedError()
 
+    def get_iri(self):
+        return self.iri
+

@@ -1,10 +1,11 @@
 from enum import Enum
 from rdflib.term import URIRef
 
+from powly.owl.model.hasiri import HasIRI
 from powly.owl.vocab.namespaces import Namespaces
 
 
-class OWLFacet(Enum):
+class OWLFacet(Enum, HasIRI):
     LENGTH = (Namespaces.XSD, 'length', 'length')
     MIN_LENGTH = (Namespaces.XSD, 'minLength', 'minLength')
     MAX_LENGTH = (Namespaces.XSD, 'maxLength', 'maxLength')
@@ -22,3 +23,6 @@ class OWLFacet(Enum):
         self.short_form = short_form
         self.symbolic_form = symbolic_form
         self.prefixed_name = ns.get_prefix_name() + ':' + short_form
+
+    def get_iri(self):
+        return self.iri
