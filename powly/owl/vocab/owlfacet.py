@@ -21,4 +21,4 @@ class OWLFacet(Enum):
         self.iri = URIRef(str(ns) + short_form)
         self.short_form = short_form
         self.symbolic_form = symbolic_form
-        self.prefixed_name = ns.prefix_name + ':' + short_form
+        self.prefixed_name = ns.get_prefix_name() + ':' + short_form
