@@ -1,12 +1,11 @@
 from abc import abstractmethod
 
 from powly.owl.model.asowlnamedindividual import AsOWLNamedIndividual
-from powly.owl.model.owlobject import OWLObject
 from powly.owl.model.owlpropertyassertionobject import \
     OWLPropertyAssertionObject
 
 
-class OWLIndividual(OWLObject, OWLPropertyAssertionObject, AsOWLNamedIndividual):
+class OWLIndividual(OWLPropertyAssertionObject, AsOWLNamedIndividual):
     """Represents a named or anonymous individual"""
 
     def is_named(self):
