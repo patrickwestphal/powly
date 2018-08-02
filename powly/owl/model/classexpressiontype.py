@@ -1,11 +1,10 @@
 from enum import Enum
 from rdflib.term import URIRef
 
-from powly.owl.model.hasiri import HasIRI
 from powly.owl.vocab.namespaces import Namespaces
 
 
-class ClassExpressionType(Enum, HasIRI):
+class ClassExpressionType(Enum):
     OWL_CLASS = 'Class'
     OBJECT_SOME_VALUES_FROM = 'ObjectSomeValuesFrom'
     OBJECT_ALL_VALUES_FROM = 'ObjectAllValuesFrom'

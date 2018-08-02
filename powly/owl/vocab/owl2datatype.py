@@ -2,7 +2,6 @@ import re
 from enum import Enum
 from rdflib.term import URIRef
 
-from powly.owl.model.hasiri import HasIRI
 from powly.owl.vocab.namespaces import Namespaces
 from powly.owl.vocab.owlfacet import OWLFacet
 from powly.owl.vocab.xsdvocabulary import XSDVocabulary
@@ -70,7 +69,7 @@ class Category(Enum):
         self.facets = facets
 
 
-class OWL2Datatype(Enum, HasIRI):
+class OWL2Datatype(Enum):
     RDF_XML_LITERAL = (
         Namespaces.RDF, 'XMLLiteral', Category.CAT_STRING_WITHOUT_LANGUAGE_TAG,
         False, ANY)
