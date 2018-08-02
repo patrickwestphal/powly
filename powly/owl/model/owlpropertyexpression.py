@@ -2,7 +2,6 @@ from abc import abstractmethod, ABC
 
 from powly.owl.exceptions import ClassCastException
 from powly.owl.model.asowldataproperty import AsOWLDataProperty
-from powly.owl.model.asowlobjectproperty import AsOWLObjectProperty
 from powly.owl.model.owlobject import OWLObject
 from powly.owl.model.owlpropertyexpressionvisitor import \
     OWLPropertyExpressionVisitor
@@ -11,14 +10,15 @@ from powly.owl.model.owlpropertyexpressionvisitorex import \
 
 
 class OWLPropertyExpression(
-    OWLObject, AsOWLObjectProperty, AsOWLDataProperty, ABC):
+        OWLObject, #AsOWLObjectProperty,  # FIXME TypeError: Cannot create a consistent method resolution order (MRO) for bases AsOWLObjectProperty, AsOWLDataProperty
+        AsOWLDataProperty, ABC):
     """
     Represents a property or possibly the inverse of a property.
     """
 
     @abstractmethod
     def __init__(self, *args):
-        pass
+        super().__init__(*args)
 
     def accept(self, visitor):
         """
@@ -56,8 +56,7 @@ class OWLPropertyExpression(
             raise ClassCastException(
                 '%s is not an OWLObjectPropertyExpression' % str(type(self)))
 
-    @staticmethod
-    def is_owl_top_object_property():
+    def is_owl_top_object_property(self):
         """
         Determines if this is the owl:topObjectProperty.
 
@@ -66,8 +65,7 @@ class OWLPropertyExpression(
         """
         return False
 
-    @staticmethod
-    def is_owl_bottom_object_property():
+    def is_owl_bottom_object_property(self):
         """
         Determines if this is the owl:bottomObjectProperty.
 
@@ -76,8 +74,7 @@ class OWLPropertyExpression(
         """
         return False
 
-    @staticmethod
-    def is_owl_top_data_property():
+    def is_owl_top_data_property(self):
         """
         Determines if this is the owl:topDataProperty.
 
@@ -85,8 +82,7 @@ class OWLPropertyExpression(
         """
         return False
 
-    @staticmethod
-    def is_owl_bottom_data_property():
+    def is_owl_bottom_data_property(self):
         """
         Determines if this is the owl:bottomDataProperty.
 
