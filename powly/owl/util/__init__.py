@@ -23,5 +23,3 @@ def _flat_iteration(component):
                  for subcomp in component.components()))
     else:
         return [component]
-
-
