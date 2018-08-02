@@ -5,7 +5,7 @@ from powly.owl.model.owlsubclassofaxiom import OWLSubClassOfAxiom
 
 
 class OWLEquivalentClassesAxiom(OWLNaryClassAxiom):
-    def __init__(self, class_expressions, annotations):
+    def __init__(self, class_expressions, annotations=None):
         """
         :param class_expressions: A collection of OWLClassExpression objects
         :param annotations: A collection of OWLAnnotation objects
