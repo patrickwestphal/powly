@@ -1,9 +1,9 @@
 from unittest.case import TestCase
 
-from owl.model.owlclass import OWLClass
-from owl.model.owlnaryclassaxiom import OWLNaryClassAxiom
-from owl.model.owlobjectproperty import OWLObjectProperty
-from owl.model.owlobjectsomevaluesfrom import OWLObjectSomeValuesFrom
+from powly.owl.model.owlclass import OWLClass
+from powly.owl.model.owlnaryclassaxiom import OWLNaryClassAxiom
+from powly.owl.model.owlobjectproperty import OWLObjectProperty
+from powly.owl.model.owlobjectsomevaluesfrom import OWLObjectSomeValuesFrom
 
 
 class TestOWLNaryClassAxiom(TestCase):
@@ -14,5 +14,5 @@ class TestOWLNaryClassAxiom(TestCase):
         prop1 = OWLObjectProperty(prefix + 'objProp1')
         cls1 = OWLClass(prefix + 'Cls1')
         ce2 = OWLObjectSomeValuesFrom(prop1, cls1)
-        ann1 = OWLAnnotation
+        # ann1 = OWLAnnotation
         ceAx = OWLNaryClassAxiom()
