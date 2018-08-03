@@ -20,15 +20,15 @@ class OWLClass(OWLClassExpression, OWLLogicalEntity, OWLNamedObject):
     Represents a Class in the OWL 2 specification.
     """
 
-    def __init__(self, uri_or_str):
+    def __init__(self, iri_or_str):
         super().__init__()
-        if isinstance(uri_or_str, str):
-            self.iri = URIRef(uri_or_str)
-        elif isinstance(uri_or_str, URIRef):
-            self.iri = uri_or_str
+        if isinstance(iri_or_str, str):
+            self.iri = URIRef(iri_or_str)
+        elif isinstance(iri_or_str, URIRef):
+            self.iri = iri_or_str
         else:
             raise RuntimeError('Unknown type for %s (%s)' % (
-                str(uri_or_str), type(uri_or_str)))
+                str(iri_or_str), type(iri_or_str)))
 
     def __lt__(self, other):
         """
