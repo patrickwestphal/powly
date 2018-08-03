@@ -22,7 +22,6 @@ class OWLLiteralBase(ABC):
     def type_index(self):
         return 4008
 
-    @abstractmethod
     def is_rdf_plain_literal(self):
         """
         Determines if the datatype of this literal is rdf:PlainLiteral. Note
@@ -30,7 +29,7 @@ class OWLLiteralBase(ABC):
         concrete syntaxes) and are of the form "abc" or "abc"@langTag will be
         of the type rdf:PlainLiteral after parsing.
         """
-        pass
+        return False
 
     @abstractmethod
     def get_literal(self):
