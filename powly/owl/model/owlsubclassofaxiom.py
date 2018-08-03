@@ -67,3 +67,7 @@ class OWLSubClassOfAxiom(OWLClassAxiom):
 
     def accept(self, visitor):
         raise NotImplementedError()
+
+    def get_axiom_type(self):
+        from powly.owl.model.axiomtype import AxiomType
+        return AxiomType.SUBCLASS_OF
