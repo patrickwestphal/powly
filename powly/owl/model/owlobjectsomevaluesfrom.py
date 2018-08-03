@@ -22,11 +22,11 @@ class OWLObjectSomeValuesFrom(OWLQuantifiedObjectRestriction):
         self.filler = filler
         self._cls_bnode = BNode()
 
-    def __lt__(self, other):
-        """
-        TODO: Maybe do something more meaningful here
-        """
-        return str(self) < str(other)
+    def hash_index(self):
+        return 239
+
+    def type_index(self):
+        return 3005
 
     def get_class_expression_type(self):
         return ClassExpressionType.OBJECT_SOME_VALUES_FROM

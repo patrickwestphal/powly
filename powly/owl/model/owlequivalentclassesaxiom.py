@@ -12,6 +12,9 @@ class OWLEquivalentClassesAxiom(OWLNaryClassAxiom):
         """
         super().__init__(class_expressions, annotations)
 
+    def hash_index(self):
+        return 53
+
     def get_axiom_without_annotations(self):
         raise NotImplementedError()
 

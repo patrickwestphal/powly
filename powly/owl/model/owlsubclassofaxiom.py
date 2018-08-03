@@ -1,4 +1,5 @@
 from powly.owl.model.owlclassaxiom import OWLClassAxiom
+from powly.owl.model.owlobject import OWLObject
 
 
 class OWLSubClassOfAxiom(OWLClassAxiom):
@@ -20,6 +21,15 @@ class OWLSubClassOfAxiom(OWLClassAxiom):
 
         assert super_class is not None
         self.super_class = super_class
+
+    def hash_index(self):
+        return 139
+
+    def __hash__(self):
+        hsh = self.hash_index()
+        hsh = OWLObject.hash_iteration(hsh, hash(self.sub_class))
+        hsh = OWLObject.hash_iteration(hsh, hash(self.super_class))
+        return OWLObject.hash_iteration(hsh, hash(self.annotations_as_list()))
 
     def get_annotated_axiom(self, annotations):
         """

@@ -17,6 +17,9 @@ class OWLDisjointClassesAxiom(OWLNaryClassAxiom):
         """
         super().__init__(class_expressions, annotations)
 
+    def hash_index(self):
+        return 31
+
     def get_axiom_without_annotations(self):
         """
         :return: An OWLDisjointClassesAxiom objects

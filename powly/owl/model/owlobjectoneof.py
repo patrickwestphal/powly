@@ -2,6 +2,7 @@ from powly.owl.model.classexpressiontype import ClassExpressionType
 from powly.owl.model.hasoperands import HasOperands
 from powly.owl.model.owlanonymousclassexpression import \
     OWLAnonymousClassExpression
+from powly.owl.model.owlobject import OWLObject
 from powly.owl.model.owlobjectunionof import OWLObjectUnionOf
 
 
@@ -20,6 +21,16 @@ class OWLObjectOneOf(OWLAnonymousClassExpression, HasOperands):
         assert values is not None
         self.values = values
         self.values.sort()
+
+    def hash_index(self):
+        return 229
+
+    def type_index(self):
+        return 3004
+
+    def __hash__(self):
+        return OWLObject.hash_iteration(
+            self.hash_index(), hash(self.get_operands_as_list()))
 
     def components(self):
         raise NotImplementedError()

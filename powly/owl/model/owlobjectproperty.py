@@ -33,11 +33,11 @@ class OWLObjectProperty(OWLObjectPropertyExpression, OWLProperty):
             OWLRDFVocabulary.OWL_TOP_OBJECT_PROPERTY.iri,
             OWLRDFVocabulary.OWL_BOTTOM_OBJECT_PROPERTY.iri}
 
-    def __gt__(self, other):
-        """
-        TODO: Also consider annotations here
-        """
-        return str(self.iri) > str(other.iri)
+    def type_index(self):
+        return 1002
+
+    def hash_index(self):
+        return 293
 
     def get_entity_type(self):
         return EntityType.OBJECT_PROPERTY

@@ -19,6 +19,9 @@ class OWLDifferentIndividualsAxiom(OWLNaryIndividualAxiom):
         """
         super().__init__(individuals, annotations)
 
+    def hash_index(self):
+        return 29
+
     def get_axiom_without_annotations(self):
         raise NotImplementedError()
 

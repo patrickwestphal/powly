@@ -10,6 +10,12 @@ class OWLObjectAllValuesFrom(OWLQuantifiedObjectRestriction):
         """
         super().__init__(property, filler)
 
+    def hash_index(self):
+        return 193
+
+    def type_index(self):
+        return 3006
+
     def get_class_expression_type(self):
         """
         TODO: Implement

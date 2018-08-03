@@ -9,6 +9,12 @@ class OWLObjectUnionOf(OWLNaryBooleanClassExpression):
         """
         super().__init__(operands)
 
+    def hash_index(self):
+        return 241
+
+    def type_index(self):
+        return 3002
+
     def as_disjunct_set(self):
         raise NotImplementedError()
 

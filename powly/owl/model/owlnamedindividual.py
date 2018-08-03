@@ -19,8 +19,11 @@ class OWLNamedIndividual(OWLIndividual, OWLLogicalEntity):
         else:
             self.iri = iri_or_str
 
-    def __lt__(self, other):
-        return self.iri < other.iri
+    def hash_index(self):
+        return 311
+
+    def type_index(self):
+        return 1005
 
     def to_string_id(self):
         return str(self.iri)

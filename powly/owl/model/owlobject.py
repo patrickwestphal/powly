@@ -1,5 +1,6 @@
 from abc import ABC, abstractmethod
 
+from powly.owl.util import compare_iterators
 from powly.owl.model.hascomponent import HasComponents
 from powly.owl.model.owlobjectvisitor import OWLObjectVisitor
 from powly.owl.model.owlobjectvisitorex import OWLObjectVisitorEx
@@ -204,4 +205,30 @@ class OWLObject(HasComponents, ABC):
         """
         :return: An integer value
         """
-        raise NotImplementedError()
+        assert other is not None
+        # return var0 < var1?-1:(var0 == var1?0:1);
+        if self.type_index() < other.type_index():
+            diff = -1
+            return diff
+        elif self.type_index() == other.type_index():
+            diff = 0
+        else:
+            diff = 1
+            return diff
+
+        return compare_iterators(self.components(), other.components())
+
+    def __gt__(self, other):
+        return self.compare_to(other) > 0
+
+    def __lt__(self, other):
+        return self.compare_to(other) < 0
+
+    @staticmethod
+    def hash_iteration(a, b):
+        """
+        :param a: An integer object
+        :param b: An integer object
+        :return: An integer object
+        """
+        return a * 37 + b

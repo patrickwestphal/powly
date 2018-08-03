@@ -15,6 +15,12 @@ class OWLObjectIntersectionOf(OWLNaryBooleanClassExpression):
         """
         super().__init__(operands)
 
+    def hash_index(self):
+        return 211
+
+    def type_index(self):
+        return 3001
+
     def as_conjunct_set(self):
         """TODO: Implement"""
         raise NotImplementedError()

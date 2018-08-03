@@ -30,11 +30,11 @@ class OWLClass(OWLClassExpression, OWLLogicalEntity, OWLNamedObject):
             raise RuntimeError('Unknown type for %s (%s)' % (
                 str(iri_or_str), type(iri_or_str)))
 
-    def __lt__(self, other):
-        """
-        TODO: Also consider annotations here
-        """
-        return str(self.iri) < str(other.iri)
+    def type_index(self):
+        return 1001
+
+    def hash_index(self):
+        return 157
 
     def components(self):
         return (c for c in [self.iri])

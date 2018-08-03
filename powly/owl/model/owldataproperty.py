@@ -18,6 +18,12 @@ class OWLDataProperty(OWLDataPropertyExpression, OWLProperty, OWLObject):
             self.iri == OWLRDFVocabulary.OWL_TOP_DATA_PROPERTY.iri or \
             self.iri == OWLRDFVocabulary.OWL_BOTTOM_DATA_PROPERTY.iri
 
+    def hash_index(self):
+        return 283
+
+    def type_index(self):
+        return 1004
+
     def to_string_id(self):
         return str(self.iri)
 
@@ -52,4 +58,3 @@ class OWLDataProperty(OWLDataPropertyExpression, OWLProperty, OWLObject):
 
     def get_iri(self):
         return self.iri
-

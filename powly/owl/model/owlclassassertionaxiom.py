@@ -1,4 +1,5 @@
 from powly.owl.model.owlindividualaxiom import OWLIndividualAxiom
+from powly.owl.model.owlobject import OWLObject
 from powly.owl.model.owlsubclassofaxiomshortcut import OWLSubClassOfAxiomShortCut
 
 
@@ -9,6 +10,15 @@ class OWLClassAssertionAxiom(OWLIndividualAxiom, OWLSubClassOfAxiomShortCut):
         self.individual = individual
         assert class_expression is not None
         self.class_expression = class_expression
+
+    def hash_index(self):
+        return 7
+
+    def __hash__(self):
+        hsh = self.hash_index()
+        hsh = OWLObject.hash_iteration(hsh, hash(self.individual))
+        hsh = OWLObject.hash_iteration(hsh, hash(self.class_expression))
+        return OWLObject.hash_iteration(hsh, hash(self.annotations))
 
     def components(self):
         raise NotImplementedError()
