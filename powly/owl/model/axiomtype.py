@@ -12,6 +12,8 @@ from powly.owl.model.owldifferentindividualsaxiom import \
 from powly.owl.model.owldisjointclassesaxiom import OWLDisjointClassesAxiom
 from powly.owl.model.owldisjointunionaxiom import OWLDisjointUnionAxiom
 from powly.owl.model.owlequivalentclassesaxiom import OWLEquivalentClassesAxiom
+from powly.owl.model.owlinverseobjectpropertiesaxiom import \
+    OWLInverseObjectPropertiesAxiom
 from powly.owl.model.owlsubclassofaxiom import OWLSubClassOfAxiom
 from powly.owl.model.owlsubobjectpropertyofaxiom import \
     OWLSubObjectPropertyOfAxiom
@@ -86,10 +88,9 @@ class AxiomType(object):
         type(OWLSubObjectPropertyOfAxiom), 13, 'SubObjectPropertyOf', False,
         False, True)
 
-    # TODO: Implement OWLInverseObjectPropertiesAxiom
-    # INVERSE_OBJECT_PROPERTIES = get_instance(
-    #     type(OWLInverseObjectPropertiesAxiom), 14, 'InverseObjectProperties',
-    #     False, False, True)
+    INVERSE_OBJECT_PROPERTIES = get_instance(
+        type(OWLInverseObjectPropertiesAxiom), 14, 'InverseObjectProperties',
+        False, False, True)
 
     # TODO: Implment OWLFunctionalObjectPropertyAxiom
     # FUNCTIONAL_OBJECT_PROPERTY = get_instance(
@@ -217,7 +218,7 @@ class AxiomType(object):
         # DISJOINT_OBJECT_PROPERTIES,  # TODO: Add when implemented
         SUB_OBJECT_PROPERTY,
         # EQUIVALENT_OBJECT_PROPERTIES,  # TODO: Add when implemented
-        # INVERSE_OBJECT_PROPERTIES,  # TODO: Add when implemented
+        INVERSE_OBJECT_PROPERTIES,
         # SUB_PROPERTY_CHAIN_OF,  # TODO: Add when implemented
         # FUNCTIONAL_OBJECT_PROPERTY,  # TODO: Add when implemented
         # INVERSE_FUNCTIONAL_OBJECT_PROPERTY,  # TODO: Add when implemented
@@ -271,10 +272,10 @@ class AxiomType(object):
         # SUB_DATA_PROPERTY,  # TODO: Add when implemented
         # EQUIVALENT_DATA_PROPERTIES,  # TODO: Add when implemented
         # DISJOINT_OBJECT_PROPERTIES,  # TODO: Add when implemented
-        SUB_OBJECT_PROPERTY  # ,
+        SUB_OBJECT_PROPERTY,
         # EQUIVALENT_OBJECT_PROPERTIES,  # TODO: Add when implemented
         # SUB_PROPERTY_CHAIN_OF,  # TODO: Add when implemented
-        # INVERSE_OBJECT_PROPERTIES,  # TODO: Add when implemented
+        INVERSE_OBJECT_PROPERTIES  # ,
         # SYMMETRIC_OBJECT_PROPERTY,  # TODO: Add when implemented
         # ASYMMETRIC_OBJECT_PROPERTY,  # TODO: Add when implemented
         # REFLEXIVE_OBJECT_PROPERTY,  # TODO: Add when implemented
