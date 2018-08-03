@@ -22,10 +22,6 @@ class OWLEntity(
     """
 
     @abstractmethod
-    def __init__(self, *args):
-        pass
-
-    @abstractmethod
     def get_entity_type(self):
         pass
 
@@ -63,7 +59,7 @@ class OWLEntity(
 
         :return: Boolean indicating whether this entity is a built in entity
         """
-        return self.uri in OWLRDFVocabulary.built_in_ap_iris()
+        return self.get_iri() in OWLRDFVocabulary.built_in_ap_iris()
 
     @abstractmethod
     def to_string_id(self):
