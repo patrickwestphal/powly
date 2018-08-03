@@ -13,6 +13,7 @@ class OWLNamedIndividual(OWLIndividual, OWLLogicalEntity):
     """
 
     def __init__(self, iri_or_str):
+        super().__init__()
         assert iri_or_str is not None
         if isinstance(iri_or_str, str):
             self.iri = URIRef(iri_or_str)
