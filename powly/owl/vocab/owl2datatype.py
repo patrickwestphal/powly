@@ -225,7 +225,7 @@ class OWL2Datatype(Enum):
 
     @classmethod
     def is_built_in(cls, datatype_iri):
-        return datatype_iri in cls.ALL_IRIS
+        return datatype_iri in cls.ALL_IRIS()
 
     def get_datatype(self):
         raise NotImplementedError()
