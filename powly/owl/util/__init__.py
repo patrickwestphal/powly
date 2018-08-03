@@ -34,6 +34,7 @@ def compare_iterators(set1, set2):
     :return: negative value if set1 comes before set2, positive value if set2
     comes before set1, 0 if the two sets are equal or incomparable.
     """
+
     for e1, e2 in zip_longest(set1, set2):
         if e1 is None:
             return -1
@@ -49,11 +50,9 @@ def compare_iterators(set1, set2):
                 return 0
 
         if isinstance(e1, Iterable) and isinstance(e2, Iterable):
-            print('Took firsts if')
             diff = compare_iterators(e1, e2)
 
         elif hasattr(e1, 'compare_to') and hasattr(e2, 'compare_to'):
-            print('Took second if')
             diff = e1.compare_to(e2)
 
         else:
@@ -64,3 +63,4 @@ def compare_iterators(set1, set2):
 
         if diff != 0:
             return diff
+    return 0
