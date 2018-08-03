@@ -1,16 +1,11 @@
 import itertools
+
 from abc import ABC, abstractmethod
 
-from powly.owl.model.owldatatype import OWLDatatype
 from powly.owl.model.owlobject import OWLObject
-from powly.owl.vocab.owl2datatype import OWL2Datatype
 
 
 class OWLLiteralBase(ABC):
-    RDF_PLAIN_LITERAL = OWLDatatype(OWL2Datatype.RDF_PLAIN_LITERAL)
-    XSD_STRING = OWLDatatype(OWL2Datatype.XSD_STRING)
-    RDF_LANG_STRING = OWLDatatype(OWL2Datatype.RDF_LANG_STRING)
-
     def __hash__(self):
         hsh = self.hash_index()
         hsh = OWLObject.hash_iteration(hsh, hash(self.get_datatype()))

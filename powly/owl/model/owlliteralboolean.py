@@ -1,6 +1,5 @@
 from powly.owl.model.owlliteralbase import OWLLiteralBase
 from powly.owl.model.owlobject import OWLObject
-from powly.owl.util.internalizedentities import XSDBOOLEAN
 
 
 class OWLLiteralBoolean(OWLLiteralBase, OWLObject):
@@ -28,4 +27,5 @@ class OWLLiteralBoolean(OWLLiteralBase, OWLObject):
         return self.literal
 
     def get_datatype(self):
+        from powly.owl.util.internalizedentities import XSDBOOLEAN
         return XSDBOOLEAN
