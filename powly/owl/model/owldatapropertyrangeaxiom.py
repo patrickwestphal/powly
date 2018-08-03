@@ -11,6 +11,9 @@ class OWLDataPropertyRangeAxiom(OWLPropertyRangeAxiom, OWLDataPropertyAxiom):
         """
         super().__init__(property, range, annotations)
 
+    def hash_index(self):
+        return 17
+
     def get_axiom_without_annotations(self):
         raise NotImplementedError()
 

@@ -11,6 +11,9 @@ class OWLSubObjectPropertyOfAxiom(OWLSubPropertyAxiom, OWLObjectPropertyAxiom):
         """
         super().__init__(sub_property, super_property, annotations)
 
+    def hash_index(self):
+        return 127
+
     def get_axiom_without_annotations(self):
         raise NotImplementedError()
 

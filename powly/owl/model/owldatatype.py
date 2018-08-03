@@ -25,6 +25,12 @@ class OWLDatatype(OWLDataRange, OWLLogicalEntity, OWLNamedObject):
         self.builtin = self.top or OWL2Datatype.is_built_in(self.iri) or \
             self.iri == OWLRDFVocabulary.RDF_PLAIN_LITERAL.iri
 
+    def hash_index(self):
+        return 269
+
+    def type_index(self):
+        return 4001
+
     def is_top_entity(self):
         return self.top
 
@@ -91,7 +97,7 @@ class OWLDatatype(OWLDataRange, OWLLogicalEntity, OWLNamedObject):
                 'method should only be called on built in datatypes.' %
                 str(self.iri))
 
-    def accept(self):
+    def accept(self, visitor):
         raise NotImplementedError()
 
     def to_string_id(self):
