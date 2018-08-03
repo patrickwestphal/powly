@@ -1,4 +1,3 @@
-from powly.owl.model.axiomtype import AxiomType
 from powly.owl.model.owlnarypropertyaxiom import OWLNaryPropertyAxiom
 from powly.owl.model.owlobjectpropertyaxiom import OWLObjectPropertyAxiom
 
@@ -75,4 +74,5 @@ class OWLInverseObjectPropertiesAxiom(OWLNaryPropertyAxiom, OWLObjectPropertyAxi
         raise NotImplementedError()
 
     def get_axiom_type(self):
+        from powly.owl.model.axiomtype import AxiomType
         return AxiomType.INVERSE_OBJECT_PROPERTIES
