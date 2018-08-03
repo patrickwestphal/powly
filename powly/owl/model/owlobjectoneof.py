@@ -33,7 +33,7 @@ class OWLObjectOneOf(OWLAnonymousClassExpression, HasOperands):
             self.hash_index(), hash(self.get_operands_as_list()))
 
     def components(self):
-        raise NotImplementedError()
+        return (op for op in self.get_operands_as_list())
 
     def get_class_expression_type(self):
         return ClassExpressionType.OBJECT_ONE_OF
