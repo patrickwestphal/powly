@@ -9,11 +9,12 @@ from powly.owl.model.owllogicalentity import OWLLogicalEntity
 from powly.owl.model.owlnamedobject import OWLNamedObject
 
 
-class OWLDatatype(OWLDataRange, OWLObject, OWLLogicalEntity, OWLNamedObject):
+class OWLDatatype(OWLDataRange, OWLLogicalEntity, OWLNamedObject):
     def __init__(self, iri_or_string):
         """
         :param iri: An URIRef object or string
         """
+        super().__init__()
         assert iri_or_string is not None
         if isinstance(iri_or_string, str):
             self.iri = URIRef(iri_or_string)
