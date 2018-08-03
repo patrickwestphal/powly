@@ -3,7 +3,7 @@ from abc import abstractmethod, ABC
 
 class HasAnnotationValue(ABC):
     @abstractmethod
-    def annotationValue(self):
+    def annotation_value(self):
         """
         :return: An OWLAnnotationValue object
         """
