@@ -6,7 +6,7 @@ from powly.owl.model.owlpropertyrange import OWLPropertyRange
 from powly.owl.model.swrlpredicate import SWRLPredicate
 
 
-class OWLDataRange(OWLObject, OWLPropertyRange, SWRLPredicate, AsOWLDatatype):
+class OWLDataRange(OWLPropertyRange, SWRLPredicate, AsOWLDatatype):
     @staticmethod
     def is_top_datatype():
         """
