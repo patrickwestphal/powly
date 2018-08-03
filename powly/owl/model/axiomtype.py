@@ -16,6 +16,8 @@ from powly.owl.model.owlinverseobjectpropertiesaxiom import \
     OWLInverseObjectPropertiesAxiom
 from powly.owl.model.owlobjectpropertydomainaxiom import \
     OWLObjectPropertyDomainAxiom
+from powly.owl.model.owlobjectpropertyrangeaxiom import \
+    OWLObjectPropertyRangeAxiom
 from powly.owl.model.owlsubclassofaxiom import OWLSubClassOfAxiom
 from powly.owl.model.owlsubobjectpropertyofaxiom import \
     OWLSubObjectPropertyOfAxiom
@@ -132,11 +134,9 @@ class AxiomType(object):
     OBJECT_PROPERTY_DOMAIN = get_instance(
         type(OWLObjectPropertyDomainAxiom), 22, 'ObjectPropertyDomain', False,
         False, True)
-
-    # TODO: Implement OWLObjectPropertyRangeAxiom
-    # OBJECT_PROPERTY_RANGE = get_instance(
-    #     type(OWLObjectPropertyRangeAxiom), 23, 'ObjectPropertyRange', False,
-    #     False, True)
+    OBJECT_PROPERTY_RANGE = get_instance(
+        type(OWLObjectPropertyRangeAxiom), 23, 'ObjectPropertyRange', False,
+        False, True)
 
     # TODO: Implement OWLDisjointObjectPropertiesAxiom
     # DISJOINT_OBJECT_PROPERTIES = get_instance(
@@ -214,8 +214,7 @@ class AxiomType(object):
         # NEGATIVE_OBJECT_PROPERTY_ASSERTION,  # TODO: Add when implemented
         # DATA_PROPERTY_ASSERTION,  # TODO: Add when implemented
         # NEGATIVE_DATA_PROPERTY_ASSERTION,  # TODO: Add when implemented
-        OBJECT_PROPERTY_DOMAIN,
-        # OBJECT_PROPERTY_RANGE,  # TODO: Add when implemented
+        OBJECT_PROPERTY_DOMAIN, OBJECT_PROPERTY_RANGE,
         # DISJOINT_OBJECT_PROPERTIES,  # TODO: Add when implemented
         SUB_OBJECT_PROPERTY,
         # EQUIVALENT_OBJECT_PROPERTIES,  # TODO: Add when implemented
@@ -248,8 +247,7 @@ class AxiomType(object):
         itertools.chain(LOGICAL_AXIOM_TYPES, [DECLARATION])
     TBoxAxiomTypes = {
         SUBCLASS_OF, EQUIVALENT_CLASSES, DISJOINT_CLASSES,
-        OBJECT_PROPERTY_DOMAIN,
-        # OBJECT_PROPERTY_RANGE,  # TODO: Add when implemented
+        OBJECT_PROPERTY_DOMAIN, OBJECT_PROPERTY_RANGE,
         # FUNCTIONAL_OBJECT_PROPERTY,  # TODO: Add when implemented
         # INVERSE_FUNCTIONAL_OBJECT_PROPERTY,  # TODO: Add when implemented
         DATA_PROPERTY_DOMAIN, DATA_PROPERTY_RANGE,
