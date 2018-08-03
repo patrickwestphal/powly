@@ -14,6 +14,8 @@ from powly.owl.model.owldisjointunionaxiom import OWLDisjointUnionAxiom
 from powly.owl.model.owlequivalentclassesaxiom import OWLEquivalentClassesAxiom
 from powly.owl.model.owlinverseobjectpropertiesaxiom import \
     OWLInverseObjectPropertiesAxiom
+from powly.owl.model.owlobjectpropertydomainaxiom import \
+    OWLObjectPropertyDomainAxiom
 from powly.owl.model.owlsubclassofaxiom import OWLSubClassOfAxiom
 from powly.owl.model.owlsubobjectpropertyofaxiom import \
     OWLSubObjectPropertyOfAxiom
@@ -127,10 +129,9 @@ class AxiomType(object):
     #     type(OWLIrreflexiveObjectPropertyAxiom), 21,
     #     'IrrefexiveObjectProperty', True, True, True)
 
-    # TODO: Implement OWLObjectPropertyDomainAxiom
-    # OBJECT_PROPERTY_DOMAIN = get_instance(
-    #     type(OWLObjectPropertyDomainAxiom), 22, 'ObjectPropertyDomain', False,
-    #     False, True)
+    OBJECT_PROPERTY_DOMAIN = get_instance(
+        type(OWLObjectPropertyDomainAxiom), 22, 'ObjectPropertyDomain', False,
+        False, True)
 
     # TODO: Implement OWLObjectPropertyRangeAxiom
     # OBJECT_PROPERTY_RANGE = get_instance(
@@ -213,7 +214,7 @@ class AxiomType(object):
         # NEGATIVE_OBJECT_PROPERTY_ASSERTION,  # TODO: Add when implemented
         # DATA_PROPERTY_ASSERTION,  # TODO: Add when implemented
         # NEGATIVE_DATA_PROPERTY_ASSERTION,  # TODO: Add when implemented
-        # OBJECT_PROPERTY_DOMAIN,  # TODO: Add when implemented
+        OBJECT_PROPERTY_DOMAIN,
         # OBJECT_PROPERTY_RANGE,  # TODO: Add when implemented
         # DISJOINT_OBJECT_PROPERTIES,  # TODO: Add when implemented
         SUB_OBJECT_PROPERTY,
@@ -247,7 +248,7 @@ class AxiomType(object):
         itertools.chain(LOGICAL_AXIOM_TYPES, [DECLARATION])
     TBoxAxiomTypes = {
         SUBCLASS_OF, EQUIVALENT_CLASSES, DISJOINT_CLASSES,
-        # OBJECT_PROPERTY_DOMAIN,  # TODO: Add when implemented
+        OBJECT_PROPERTY_DOMAIN,
         # OBJECT_PROPERTY_RANGE,  # TODO: Add when implemented
         # FUNCTIONAL_OBJECT_PROPERTY,  # TODO: Add when implemented
         # INVERSE_FUNCTIONAL_OBJECT_PROPERTY,  # TODO: Add when implemented
