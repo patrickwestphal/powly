@@ -1,3 +1,4 @@
+from powly.owl.model.classexpressiontype import ClassExpressionType
 from powly.owl.model.owlnarybooleanclassexpression import \
     OWLNaryBooleanClassExpression
 
@@ -27,7 +28,7 @@ class OWLObjectUnionOf(OWLNaryBooleanClassExpression):
 
         :return: An ClassExpressionType object
         """
-        raise NotImplementedError()
+        return ClassExpressionType.OBJECT_UNION_OF
 
     def accept(self, visitor):
         """
