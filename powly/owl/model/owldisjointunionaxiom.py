@@ -1,5 +1,6 @@
 from powly.owl.model.hasoperands import HasOperands
 from powly.owl.model.owlclassaxiom import OWLClassAxiom
+from powly.owl.model.owldisjointclassesaxiom import OWLDisjointClassesAxiom
 from powly.owl.model.owlequivalentclassesaxiom import OWLEquivalentClassesAxiom
 from powly.owl.model.owlobject import OWLObject
 from powly.owl.model.owlobjectunionof import OWLObjectUnionOf
@@ -91,7 +92,7 @@ class OWLDisjointUnionAxiom(OWLClassAxiom, HasOperands):
         is contained in the classes returned by the getClassExpressions()
         method.
         """
-        return OWLDisjointUnionAxiom(self.class_expressions)
+        return OWLDisjointClassesAxiom(self.class_expressions)
 
     def accept(self, visitor):
         raise NotImplementedError()
