@@ -75,4 +75,4 @@ class OWLInverseObjectPropertiesAxiom(OWLNaryPropertyAxiom, OWLObjectPropertyAxi
         raise NotImplementedError()
 
     def get_axiom_type(self):
-        return AxiomType.
+        return AxiomType.INVERSE_OBJECT_PROPERTIES
