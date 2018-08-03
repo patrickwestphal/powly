@@ -13,4 +13,4 @@ class OWLLogicalEntity(OWLEntity, ABC):
         return OWLObject.hash_iteration(self.hash_index(), hash(self.get_iri()))
 
     def components(self):
-        raise NotImplementedError()
+        return (i for i in self.get_iri())
