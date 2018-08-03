@@ -1,4 +1,3 @@
-from powly.owl.model.axiomtype import AxiomType
 from powly.owl.model.hasoperands import HasOperands
 from powly.owl.model.owlclassaxiom import OWLClassAxiom
 from powly.owl.model.owlequivalentclassesaxiom import OWLEquivalentClassesAxiom
@@ -98,4 +97,5 @@ class OWLDisjointUnionAxiom(OWLClassAxiom, HasOperands):
         raise NotImplementedError()
 
     def get_axiom_type(self):
+        from powly.owl.model.axiomtype import AxiomType
         return AxiomType.DISJOINT_UNION
