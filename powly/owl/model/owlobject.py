@@ -208,7 +208,6 @@ class OWLObject(HasComponents, ABC):
         :return: An integer value
         """
         assert other is not None
-        # return var0 < var1?-1:(var0 == var1?0:1);
         if self.type_index() < other.type_index():
             diff = -1
             return diff
