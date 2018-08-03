@@ -8,7 +8,11 @@ from powly.owl.model.owlobjectvisitorex import OWLObjectVisitorEx
 
 class OWLObject(HasComponents, ABC):
     @abstractmethod
-    def __init__(self, *args):
+    def type_index(self):
+        pass
+
+    @abstractmethod
+    def hash_index(self):
         pass
 
     @staticmethod
@@ -56,8 +60,7 @@ class OWLObject(HasComponents, ABC):
         """
         return False
 
-    @staticmethod
-    def is_iri():
+    def is_iri(self):
         return False
 
     @staticmethod
@@ -78,8 +81,7 @@ class OWLObject(HasComponents, ABC):
             (not self.is_individual()) and \
             (not self.is_ontology()) and self.is_anonymous()
 
-    @staticmethod
-    def is_anonymous():
+    def is_anonymous(self):
         """
         Actually part of the IsAnonymous interface
         """
