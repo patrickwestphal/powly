@@ -4,7 +4,7 @@ from powly.owl.model.owlsubclassofaxiomshortcut import OWLSubClassOfAxiomShortCu
 
 
 class OWLClassAssertionAxiom(OWLIndividualAxiom, OWLSubClassOfAxiomShortCut):
-    def __init__(self, individual, class_expression, annotations=[]):
+    def __init__(self, individual, class_expression, annotations=None):
         super().__init__(annotations)
         assert individual is not None
         self.individual = individual
