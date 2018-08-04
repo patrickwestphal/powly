@@ -1,9 +1,10 @@
 from abc import abstractmethod, ABC
 
+from powly.owl.model.hasfiller import HasFiller
 from powly.owl.model.owlrestriction import OWLRestriction
 
 
-class OWLQuantifiedRestriction(OWLRestriction, ABC):
+class OWLQuantifiedRestriction(OWLRestriction, HasFiller, ABC):
     @abstractmethod
     def __init__(self, filler):
         self.filler = filler
