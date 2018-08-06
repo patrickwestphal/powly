@@ -18,6 +18,8 @@ from powly.owl.model.owlobjectpropertydomainaxiom import \
     OWLObjectPropertyDomainAxiom
 from powly.owl.model.owlobjectpropertyrangeaxiom import \
     OWLObjectPropertyRangeAxiom
+from powly.owl.model.owlsubannotationpropertyofaxiom import \
+    OWLSubAnnotationPropertyOfAxiom
 from powly.owl.model.owlsubclassofaxiom import OWLSubClassOfAxiom
 from powly.owl.model.owlsubdatapropertyofaxiom import OWLSubDataPropertyOfAxiom
 from powly.owl.model.owlsubobjectpropertyofaxiom import \
@@ -190,11 +192,9 @@ class AxiomType(object):
     ANNOTATION_ASSERTION = get_instance(
         type(OWLAnnotationAssertionAxiom), 34, 'AnnotationAssertion', False,
         False, False)
-
-    # TODO: Implement OWLSubAnnotationPropertyOfAxiom
-    # SUB_ANNOTATION_PROPERTY_OF = get_instance(
-    #     type(OWLSubAnnotationPropertyOfAxiom), 35, 'SubAnnotationPropertyOf',
-    #     True, True, False)
+    SUB_ANNOTATION_PROPERTY_OF = get_instance(
+        type(OWLSubAnnotationPropertyOfAxiom), 35, 'SubAnnotationPropertyOf',
+        True, True, False)
 
     # TODO: Implement OWLAnnotationPropertyRangeAxiom
     # ANNOTATION_PROPERTY_RANGE = get_instance(
@@ -235,8 +235,7 @@ class AxiomType(object):
         # DATATYPE_DEFINITION,  # TODO: Add when implemented
         DISJOINT_UNION, DECLARATION,
         # SWRL_RULE,  # TODO: Add when implemented
-        ANNOTATION_ASSERTION,
-        # SUB_ANNOTATION_PROPERTY_OF,  # TODO: Add when implemented
+        ANNOTATION_ASSERTION, SUB_ANNOTATION_PROPERTY_OF,
         # ANNOTATION_PROPERTY_DOMAIN,  # TODO: Add when implemented
         # ANNOTATION_PROPERTY_RANGE,  # TODO: Add when implemented
         # HAS_KEY  # TODO: Add when implemented
