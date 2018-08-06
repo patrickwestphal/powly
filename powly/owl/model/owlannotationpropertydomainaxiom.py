@@ -48,12 +48,15 @@ class OWLAnnotationPropertyDomainAxiom(
     def get_property(self):
         return self.property
 
-    def components_without_annotations(self):
+    def components(self):
         return itertools.chain(
             (p for p in [self.get_property()]),
             (d for d in [self.get_domain()]),
             (ann for ann in self.annotations_as_list())
         )
+
+    def components_without_annotations(self):
+        raise NotImplementedError()
 
     def components_annotations_first(self):
         raise NotImplementedError()
