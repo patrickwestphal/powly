@@ -2,6 +2,8 @@ import itertools
 
 from powly.owl.model.owlannotationassertionaxiom import \
     OWLAnnotationAssertionAxiom
+from powly.owl.model.owlannotationpropertydomainaxiom import \
+    OWLAnnotationPropertyDomainAxiom
 from powly.owl.model.owlclassassertionaxiom import OWLClassAssertionAxiom
 from powly.owl.model.owldatapropertydomainaxiom import \
     OWLDataPropertyDomainAxiom
@@ -201,10 +203,9 @@ class AxiomType(object):
     #     type(OWLAnnotationPropertyRangeAxiom), 36, 'AnnotationPropertyRangeOf',
     #     True, True, False)
 
-    # TODO: Implement OWLAnnotationPropertyDomainAxiom
-    # ANNOTATION_PROPERTY_DOMAIN = get_instance(
-    #     type(OWLAnnotationPropertyDomainAxiom), 37,
-    #     'AnnotationPropertyDomain', True, True, False)
+    ANNOTATION_PROPERTY_DOMAIN = get_instance(
+        type(OWLAnnotationPropertyDomainAxiom), 37,
+        'AnnotationPropertyDomain', True, True, False)
 
     AXIOM_TYPES = {
         SUBCLASS_OF, EQUIVALENT_CLASSES, DISJOINT_CLASSES, CLASS_ASSERTION,
@@ -236,7 +237,7 @@ class AxiomType(object):
         DISJOINT_UNION, DECLARATION,
         # SWRL_RULE,  # TODO: Add when implemented
         ANNOTATION_ASSERTION, SUB_ANNOTATION_PROPERTY_OF,
-        # ANNOTATION_PROPERTY_DOMAIN,  # TODO: Add when implemented
+        ANNOTATION_PROPERTY_DOMAIN,
         # ANNOTATION_PROPERTY_RANGE,  # TODO: Add when implemented
         # HAS_KEY  # TODO: Add when implemented
     }
