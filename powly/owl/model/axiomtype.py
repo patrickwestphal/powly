@@ -19,6 +19,7 @@ from powly.owl.model.owlobjectpropertydomainaxiom import \
 from powly.owl.model.owlobjectpropertyrangeaxiom import \
     OWLObjectPropertyRangeAxiom
 from powly.owl.model.owlsubclassofaxiom import OWLSubClassOfAxiom
+from powly.owl.model.owlsubdatapropertyofaxiom import OWLSubDataPropertyOfAxiom
 from powly.owl.model.owlsubobjectpropertyofaxiom import \
     OWLSubObjectPropertyOfAxiom
 
@@ -153,10 +154,9 @@ class AxiomType(object):
     #     type(OWLEquivalentDataPropertiesAxiom), 26, 'EquivalentDataProperties',
     #     False, False, True)
 
-    # TODO: Implement OWLSubDataPropertyOfAxiom
-    # SUB_DATA_PROPERTY = get_instance(
-    #     type(OWLSubDataPropertyOfAxiom), 27, 'SubDataPropertyOf', False, False,
-    #     True)
+    SUB_DATA_PROPERTY = get_instance(
+        type(OWLSubDataPropertyOfAxiom), 27, 'SubDataPropertyOf', False, False,
+        True)
 
     # TODO: Implement OWLFunctionalDataPropertyAxiom
     # FUNCTIONAL_DATA_PROPERTY = get_instance(
@@ -228,11 +228,11 @@ class AxiomType(object):
         # REFLEXIVE_OBJECT_PROPERTY,  # TODO: Add when implemented
         # IRREFLEXIVE_OBJECT_PROPERTY,  # TODO: Add when implemented
         DATA_PROPERTY_DOMAIN, DATA_PROPERTY_RANGE,
-        #DISJOINT_DATA_PROPERTIES,  # TODO: Add when implemented
-        #SUB_DATA_PROPERTY,  # TODO: Add when implemented
-        #EQUIVALENT_DATA_PROPERTIES,  # TODO: Add when implemented
-        #FUNCTIONAL_DATA_PROPERTY,  # TODO: Add when implemented
-        #DATATYPE_DEFINITION,  # TODO: Add when implemented
+        # DISJOINT_DATA_PROPERTIES,  # TODO: Add when implemented
+        SUB_DATA_PROPERTY,
+        # EQUIVALENT_DATA_PROPERTIES,  # TODO: Add when implemented
+        # FUNCTIONAL_DATA_PROPERTY,  # TODO: Add when implemented
+        # DATATYPE_DEFINITION,  # TODO: Add when implemented
         DISJOINT_UNION, DECLARATION,
         # SWRL_RULE,  # TODO: Add when implemented
         ANNOTATION_ASSERTION,
@@ -268,7 +268,7 @@ class AxiomType(object):
     RBoxAxiomTypes = {
         # TRANSITIVE_OBJECT_PROPERTY,  # TODO: Add when implemented
         # DISJOINT_DATA_PROPERTIES,  # TODO: Add when implemented
-        # SUB_DATA_PROPERTY,  # TODO: Add when implemented
+        SUB_DATA_PROPERTY,
         # EQUIVALENT_DATA_PROPERTIES,  # TODO: Add when implemented
         # DISJOINT_OBJECT_PROPERTIES,  # TODO: Add when implemented
         SUB_OBJECT_PROPERTY,
