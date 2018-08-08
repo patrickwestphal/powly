@@ -1,5 +1,3 @@
-from abc import abstractmethod
-
 from powly.owl.model.owlobjectpropertycharacteristicaxiom import \
     OWLObjectPropertyCharacteristicAxiom
 

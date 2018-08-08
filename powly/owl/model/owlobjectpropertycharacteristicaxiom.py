@@ -10,9 +10,7 @@ class OWLObjectPropertyCharacteristicAxiom(
         :param property: An OWLObjectPropertyExpression object
         :param annotations: A collection of OWLAnnotation objects
         """
-        super().__init__(annotations)
-        assert property is not None
-        self.property = property
+        super().__init__(property, annotations)
 
     def get_property(self):
         return self.property
