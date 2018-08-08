@@ -7,6 +7,7 @@ from powly.owl.model.owlrestriction import OWLRestriction
 class OWLQuantifiedRestriction(OWLRestriction, HasFiller, ABC):
     @abstractmethod
     def __init__(self, filler):
+        super().__init__()
         self.filler = filler
 
     def get_filler(self):
