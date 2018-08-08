@@ -1,9 +1,11 @@
 from abc import abstractmethod, ABC
 
+from powly.owl.model.owlobjectrestriction import OWLObjectRestriction
 from powly.owl.model.owlquantifiedrestriction import OWLQuantifiedRestriction
 
 
-class OWLQuantifiedObjectRestriction(OWLQuantifiedRestriction, ABC):
+class OWLQuantifiedObjectRestriction(
+        OWLQuantifiedRestriction, OWLObjectRestriction, ABC):
     @abstractmethod
     def __init__(self, property, filler):
         """
@@ -11,8 +13,8 @@ class OWLQuantifiedObjectRestriction(OWLQuantifiedRestriction, ABC):
         :param filler: An OWLClassExpression object
         """
         super().__init__(filler)
+        assert property is not None
         self.property = property
-        assert self.property is not None
 
     def add_anonymous_individuals_to_set(self, anons):
         """

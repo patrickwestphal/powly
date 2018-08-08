@@ -5,7 +5,7 @@ from powly.owl.model.owlquantifiedobjectrestriction import \
 
 
 class OWLObjectCardinalityRestriction(
-        OWLCardinalityRestriction, OWLQuantifiedObjectRestriction,
+        OWLCardinalityRestriction, #OWLQuantifiedObjectRestriction,
         OWLObjectRestriction):
     def __init__(self, property, cardinality, filler):
         """

@@ -1,25 +1,20 @@
 import itertools
 
 from powly.owl.model.hascardinality import HasCardinality
-from powly.owl.model.owlanonymousclassexpression import \
-    OWLAnonymousClassExpression
 from powly.owl.model.owlobject import OWLObject
 from powly.owl.model.owlquantifiedrestriction import OWLQuantifiedRestriction
 
 
-class OWLCardinalityRestriction(
-        OWLQuantifiedRestriction, HasCardinality, OWLAnonymousClassExpression):
+class OWLCardinalityRestriction(OWLQuantifiedRestriction, HasCardinality):
 
     def __init__(self, cardinality, filler):
         """
         :param cardinality: An integer object
         :param filler: An OWLPropertyRange object
         """
-        super().__init__()
+        super().__init__(filler)
         assert cardinality is not None
         self.cardinality = cardinality
-        assert filler is not None
-        self.filler = filler
 
     def __hash__(self):
         hsh = self.hash_index()
