@@ -26,6 +26,8 @@ from powly.owl.model.owlsubclassofaxiom import OWLSubClassOfAxiom
 from powly.owl.model.owlsubdatapropertyofaxiom import OWLSubDataPropertyOfAxiom
 from powly.owl.model.owlsubobjectpropertyofaxiom import \
     OWLSubObjectPropertyOfAxiom
+from powly.owl.model.owltransitiveobjectpropertyaxiom import \
+    OWLTransitiveObjectPropertyAxiom
 
 
 class AxiomType(object):
@@ -121,10 +123,9 @@ class AxiomType(object):
     #     type(OWLAsymmetricObjectPropertyAxiom), 18, 'AsymmetricObjectProperty',
     #     True, True, True)
 
-    # TODO: Implement OWLTransitiveObjectPropertyAxiom
-    # TRANSITIVE_OBJECT_PROPERTY = get_instance(
-    #     type(OWLTransitiveObjectPropertyAxiom), 19, 'TransitiveObjectProperty',
-    #     False, False, True)
+    TRANSITIVE_OBJECT_PROPERTY = get_instance(
+        type(OWLTransitiveObjectPropertyAxiom), 19, 'TransitiveObjectProperty',
+        False, False, True)
 
     # TODO: Implement OWLReflexiveObjectPropertyAxiom
     # REFLEXIVE_OBJECT_PROPERTY = get_instance(
@@ -225,7 +226,7 @@ class AxiomType(object):
         # INVERSE_FUNCTIONAL_OBJECT_PROPERTY,  # TODO: Add when implemented
         # SYMMETRIC_OBJECT_PROPERTY,  # TODO: Add when implemented
         # ASYMMETRIC_OBJECT_PROPERTY,  # TODO: Add when implemented
-        # TRANSITIVE_OBJECT_PROPERTY,  # TODO: Add when implemented
+        TRANSITIVE_OBJECT_PROPERTY,
         # REFLEXIVE_OBJECT_PROPERTY,  # TODO: Add when implemented
         # IRREFLEXIVE_OBJECT_PROPERTY,  # TODO: Add when implemented
         DATA_PROPERTY_DOMAIN, DATA_PROPERTY_RANGE,
@@ -266,7 +267,7 @@ class AxiomType(object):
         # NEGATIVE_DATA_PROPERTY_ASSERTION  # TODO: Add when implemented
     }
     RBoxAxiomTypes = {
-        # TRANSITIVE_OBJECT_PROPERTY,  # TODO: Add when implemented
+        TRANSITIVE_OBJECT_PROPERTY,
         # DISJOINT_DATA_PROPERTIES,  # TODO: Add when implemented
         SUB_DATA_PROPERTY,
         # EQUIVALENT_DATA_PROPERTIES,  # TODO: Add when implemented
