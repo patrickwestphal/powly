@@ -1,18 +1,16 @@
 from powly.owl.model.haslang import HasLang
-from powly.owl.model.owlannotationobject import OWLAnnotationObject
 from powly.owl.model.owlannotationvalue import OWLAnnotationValue
 from powly.owl.model.owldatatype import OWLDatatype
 from powly.owl.model.owlliteralbase import OWLLiteralBase
 from powly.owl.model.owlobject import OWLObject
-from powly.owl.model.owlprimitive import OWLPrimitive
 from powly.owl.model.owlpropertyassertionobject import \
     OWLPropertyAssertionObject
 from powly.owl.vocab.owl2datatype import OWL2Datatype
 
 
 class OWLLiteral(
-        OWLLiteralBase, OWLObject, OWLAnnotationObject, OWLAnnotationValue,
-        OWLPropertyAssertionObject, OWLPrimitive, HasLang):
+    OWLLiteralBase, OWLAnnotationValue, OWLPropertyAssertionObject, HasLang):
+
     RDF_PLAIN_LITERAL = OWLDatatype(OWL2Datatype.RDF_PLAIN_LITERAL)
     XSD_STRING = OWLDatatype(OWL2Datatype.XSD_STRING)
     RDF_LANG_STRING = OWLDatatype(OWL2Datatype.RDF_LANG_STRING)
