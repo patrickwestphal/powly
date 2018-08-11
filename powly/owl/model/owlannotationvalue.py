@@ -13,5 +13,5 @@ class OWLAnnotationValue(OWLAnnotationObject, OWLPrimitive, HasAnnotationValue):
     def is_literal(self):
         return False
 
-    def anontation_value(self):
+    def annotation_value(self):
         return self
