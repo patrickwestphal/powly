@@ -16,6 +16,7 @@ class OWLLiteral(
     RDF_LANG_STRING = OWLDatatype(OWL2Datatype.RDF_LANG_STRING)
 
     def __init__(self, literal, lang=None, datatype=None):
+        super().__init__()
         assert literal is not None
         self.literal = literal
 

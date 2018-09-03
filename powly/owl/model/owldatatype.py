@@ -18,6 +18,8 @@ class OWLDatatype(OWLDataRange, OWLLogicalEntity, OWLNamedObject):
         assert iri_or_string is not None
         if isinstance(iri_or_string, str):
             self.iri = URIRef(iri_or_string)
+        elif isinstance(iri_or_string, OWL2Datatype):
+            self.iri = iri_or_string.iri
         else:
             self.iri = iri_or_string
 
