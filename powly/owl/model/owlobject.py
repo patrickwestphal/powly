@@ -180,7 +180,7 @@ class OWLObject(HasComponents, ABC):
         raise NotImplementedError()
 
     def __eq__(self, other):
-        if other == self:
+        if other is self:
             return True
         if other is None:
             return False
