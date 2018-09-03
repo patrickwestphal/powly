@@ -12,6 +12,8 @@ from powly.owl.model.owldeclarationaxiom import OWLDeclarationAxiom
 from powly.owl.model.owldifferentindividualsaxiom import \
     OWLDifferentIndividualsAxiom
 from powly.owl.model.owldisjointclassesaxiom import OWLDisjointClassesAxiom
+from powly.owl.model.owldisjointobjectpropertiesaxiom import \
+    OWLDisjointObjectPropertiesAxiom
 from powly.owl.model.owldisjointunionaxiom import OWLDisjointUnionAxiom
 from powly.owl.model.owlequivalentclassesaxiom import OWLEquivalentClassesAxiom
 from powly.owl.model.owlinverseobjectpropertiesaxiom import \
@@ -143,11 +145,9 @@ class AxiomType(object):
     OBJECT_PROPERTY_RANGE = get_instance(
         type(OWLObjectPropertyRangeAxiom), 23, 'ObjectPropertyRange', False,
         False, True)
-
-    # TODO: Implement OWLDisjointObjectPropertiesAxiom
-    # DISJOINT_OBJECT_PROPERTIES = get_instance(
-    #     type(OWLDisjointObjectPropertiesAxiom), 24, 'DisjointObjectProperties',
-    #     True, True, True)
+    DISJOINT_OBJECT_PROPERTIES = get_instance(
+        type(OWLDisjointObjectPropertiesAxiom), 24, 'DisjointObjectProperties',
+        True, True, True)
 
     # TODO: Implement OWLSubPropertyChainOfAxiom
     # SUB_PROPERTY_CHAIN_OF = get_instance(
@@ -217,8 +217,7 @@ class AxiomType(object):
         # DATA_PROPERTY_ASSERTION,  # TODO: Add when implemented
         # NEGATIVE_DATA_PROPERTY_ASSERTION,  # TODO: Add when implemented
         OBJECT_PROPERTY_DOMAIN, OBJECT_PROPERTY_RANGE,
-        # DISJOINT_OBJECT_PROPERTIES,  # TODO: Add when implemented
-        SUB_OBJECT_PROPERTY,
+        DISJOINT_OBJECT_PROPERTIES, SUB_OBJECT_PROPERTY,
         # EQUIVALENT_OBJECT_PROPERTIES,  # TODO: Add when implemented
         INVERSE_OBJECT_PROPERTIES,
         # SUB_PROPERTY_CHAIN_OF,  # TODO: Add when implemented
@@ -271,8 +270,7 @@ class AxiomType(object):
         # DISJOINT_DATA_PROPERTIES,  # TODO: Add when implemented
         SUB_DATA_PROPERTY,
         # EQUIVALENT_DATA_PROPERTIES,  # TODO: Add when implemented
-        # DISJOINT_OBJECT_PROPERTIES,  # TODO: Add when implemented
-        SUB_OBJECT_PROPERTY,
+        DISJOINT_OBJECT_PROPERTIES, SUB_OBJECT_PROPERTY,
         # EQUIVALENT_OBJECT_PROPERTIES,  # TODO: Add when implemented
         # SUB_PROPERTY_CHAIN_OF,  # TODO: Add when implemented
         INVERSE_OBJECT_PROPERTIES  # ,
